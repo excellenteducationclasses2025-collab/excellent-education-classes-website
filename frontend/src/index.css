@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        /* Holi Festival Theme - Light Mode */
+        /* Vibrant Magenta/Pink - Primary */
+        --background: 0.98 0.01 330;
+        --foreground: 0.20 0.02 300;
+        --card: 1 0 0;
+        --card-foreground: 0.20 0.02 300;
+        --popover: 1 0 0;
+        --popover-foreground: 0.20 0.02 300;
+        --primary: 0.65 0.25 340;
+        --primary-foreground: 0.99 0 0;
+        --secondary: 0.75 0.22 90;
+        --secondary-foreground: 0.20 0.02 90;
+        --muted: 0.96 0.02 330;
+        --muted-foreground: 0.50 0.02 300;
+        --accent: 0.70 0.20 50;
+        --accent-foreground: 0.20 0.02 50;
+        --destructive: 0.58 0.24 27;
+        --destructive-foreground: 0.99 0 0;
+        --border: 0.90 0.03 330;
+        --input: 0.92 0.03 330;
+        --ring: 0.65 0.25 340;
+        --chart-1: 0.65 0.25 340;
+        --chart-2: 0.75 0.22 90;
+        --chart-3: 0.60 0.22 240;
+        --chart-4: 0.55 0.20 150;
+        --chart-5: 0.70 0.20 50;
+        --sidebar: 0.99 0 0;
+        --sidebar-foreground: 0.20 0.02 300;
+        --sidebar-primary: 0.65 0.25 340;
+        --sidebar-primary-foreground: 0.99 0 0;
+        --sidebar-accent: 0.96 0.02 330;
+        --sidebar-accent-foreground: 0.20 0.02 300;
+        --sidebar-border: 0.90 0.03 330;
+        --sidebar-ring: 0.70 0 0;
+        /* Custom Holi colors */
+        --holi-magenta: 0.65 0.25 340;
+        --holi-pink: 0.75 0.20 350;
+        --holi-yellow: 0.75 0.22 90;
+        --holi-blue: 0.60 0.22 240;
+        --holi-green: 0.55 0.20 150;
+        --holi-orange: 0.70 0.20 50;
+    }
+
+    .dark {
+        /* Holi Festival Theme - Dark Mode */
+        --background: 0.15 0.02 300;
+        --foreground: 0.98 0.02 330;
+        --card: 0.18 0.02 300;
+        --card-foreground: 0.98 0.02 330;
+        --popover: 0.20 0.02 300;
+        --popover-foreground: 0.98 0.02 330;
+        --primary: 0.70 0.27 340;
+        --primary-foreground: 0.15 0.02 300;
+        --secondary: 0.77 0.24 90;
+        --secondary-foreground: 0.15 0.02 90;
+        --muted: 0.25 0.02 300;
+        --muted-foreground: 0.65 0.03 330;
+        --accent: 0.72 0.22 50;
+        --accent-foreground: 0.98 0.02 330;
+        --destructive: 0.65 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.30 0.02 300;
+        --input: 0.30 0.02 300;
+        --ring: 0.70 0.27 340;
+        --chart-1: 0.70 0.27 340;
+        --chart-2: 0.77 0.24 90;
+        --chart-3: 0.62 0.24 240;
+        --chart-4: 0.57 0.22 150;
+        --chart-5: 0.72 0.22 50;
+        --sidebar: 0.18 0.02 300;
+        --sidebar-foreground: 0.98 0.02 330;
+        --sidebar-primary: 0.70 0.27 340;
+        --sidebar-primary-foreground: 0.98 0.02 330;
+        --sidebar-accent: 0.25 0.02 300;
+        --sidebar-accent-foreground: 0.98 0.02 330;
+        --sidebar-border: 0.30 0.02 300;
+        --sidebar-ring: 0.50 0 0;
+        /* Custom Holi colors */
+        --holi-magenta: 0.70 0.27 340;
+        --holi-pink: 0.77 0.22 350;
+        --holi-yellow: 0.77 0.24 90;
+        --holi-blue: 0.62 0.24 240;
+        --holi-green: 0.57 0.22 150;
+        --holi-orange: 0.72 0.22 50;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Holi Festival Animations */
+@keyframes color-splash {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes powder-burst {
+    0% {
+        transform: scale(0.8) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) translateY(-20px);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(2) translateY(-40px);
+        opacity: 0;
+    }
+}
+
+@keyframes color-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-15px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes splash-wave {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+.animate-color-splash {
+    animation: color-splash 3s ease-in-out infinite;
+}
+
+.animate-powder-burst {
+    animation: powder-burst 2s ease-out infinite;
+}
+
+.animate-color-float {
+    animation: color-float 4s ease-in-out infinite;
+}
+
+.animate-splash-wave {
+    animation: splash-wave 3s ease-in-out infinite;
+}
+
+/* Holi multi-color gradient backgrounds */
+.bg-holi-gradient {
+    background: linear-gradient(
+        135deg,
+        oklch(var(--holi-magenta)) 0%,
+        oklch(var(--holi-pink)) 20%,
+        oklch(var(--holi-yellow)) 40%,
+        oklch(var(--holi-blue)) 60%,
+        oklch(var(--holi-green)) 80%,
+        oklch(var(--holi-orange)) 100%
+    );
+}
+
+.bg-holi-gradient-radial {
+    background: radial-gradient(
+        circle at center,
+        oklch(var(--holi-magenta)) 0%,
+        oklch(var(--holi-yellow)) 30%,
+        oklch(var(--holi-blue)) 60%,
+        oklch(var(--holi-green)) 100%
+    );
+}
+
+/* Holi color splash accents */
+.border-holi-splash {
+    border-image: linear-gradient(
+        to right,
+        oklch(var(--holi-magenta)),
+        oklch(var(--holi-yellow)),
+        oklch(var(--holi-blue)),
+        oklch(var(--holi-green)),
+        oklch(var(--holi-orange))
+    ) 1;
+}

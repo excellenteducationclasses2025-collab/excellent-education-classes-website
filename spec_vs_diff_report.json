@@ -1,0 +1,50 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T03:31:09.275Z",
+  "summary": "All four requirements (REQ-25, REQ-26, REQ-27, REQ-28) appear to be implemented. RegistrationPage.tsx was created with six fields and Holi theme styling. The /register route was added to App.tsx alongside all existing routes. A Register navigation link was added to Layout.tsx without removing existing links. The backend Registration type was updated to include mobileNumber and schoolName fields, and a migration module was added. Some modifications were made to files that were explicitly listed as off-limits.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "A migration module (backend/migration.mo) was added to handle schema migration from old Registration records (with collegeOrSchool) to new records (with mobileNumber and schoolName), including backfilling existing data.",
+      "reason": "REQ-28 only asked to ensure the backend type includes the required fields and did not request a migration module or data migration logic.",
+      "evidence": [
+        "backend/migration.mo"
+      ]
+    },
+    {
+      "description": "AdminDashboard.tsx was modified to use reg.schoolName and reg.mobileNumber and a Mobile column was added to the registrations table.",
+      "reason": "The build request constraints explicitly state not to alter AdminDashboard.tsx, and non-goals include any changes to the Admin Dashboard.",
+      "evidence": [
+        "frontend/src/pages/AdminDashboard.tsx",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "frontend/src/pages/StudentLogin.tsx was modified to remove the 'Register here' link.",
+      "reason": "The build request constraints state not to alter pages not directly related to the registration portal, and StudentLogin.tsx modification was not requested.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "frontend/src/pages/HomePage.tsx CTA buttons were changed to navigate to live-classes and admin-login with student-login references removed.",
+      "reason": "The build request explicitly states 'Do not alter HomePage.tsx', making this an unsolicited modification.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    }
+  ],
+  "confidence": 0.8,
+  "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "frontend/src/pages/RegistrationPage.tsx",
+    "project_state.json"
+  ]
+}

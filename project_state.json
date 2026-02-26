@@ -1,0 +1,277 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 21,
+  "summary": "Holi-themed app with a live class portal where users can browse and join live sessions (no registration/RSVP). Classes have title, instructor, time, description, and a direct Join button. Data is hardcoded. Student registration portal and student login removed entirely (pages, routes, and navigation links). A fresh registration portal is being added back at /register with fields: Name, Mobile number, Email, Gender, School name, and Class.",
+  "architectural_notes": [],
+  "known_issues": [
+    "Admin dashboard throws 'Actor not initialized' error — frontend calls backend canister before it is fully initialized"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-replace-all-republic-day-themed-colors-saffron-ff9933-white-ffffff-green-138808-with-holi-themed-colors-using-vibrant-festival-palette-including-magenta-pink-yellow-blue-green-and-orange-in-oklch-color-space-for-both-light-and-dark-modes",
+      "title": "Replace all Republic Day themed colors (saffron #FF9933, white #FFFFFF, green #138808) with Holi themed colors using vibrant festival palette including magenta/pink, yellow, blue, green, and orange in OKLCH color space for both light and dark modes",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-indian-flag-decorative-elements-and-tricolor-ribbons-with-holi-themed-decorative-elements-such-as-color-splashes-gulal-powder-effects-and-water-balloon-illustrations-throughout-the-layout-component",
+      "title": "Replace Indian flag decorative elements and tricolor ribbons with Holi-themed decorative elements such as color splashes, gulal powder effects, and water balloon illustrations throughout the Layout component",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-homepage-hero-section-to-replace-republic-day-themed-confetti-and-ribbon-animations-with-holi-themed-animations-such-as-color-powder-splashes-floating-gulal-particles-and-celebratory-color-bursts",
+      "title": "Update HomePage hero section to replace Republic Day themed confetti and ribbon animations with Holi-themed animations such as color powder splashes, floating gulal particles, and celebratory color bursts",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-tailwind-animations-from-republic-day-themed-animations-wave-ribbon-wave-to-holi-themed-animations-such-as-color-splash-powder-burst-and-color-float-effects",
+      "title": "Update Tailwind animations from Republic Day themed animations (wave, ribbon-wave) to Holi-themed animations such as color-splash, powder-burst, and color-float effects",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-tricolor-shadow-effects-in-tailwind-config-with-holi-themed-multi-color-shadow-effects-using-vibrant-festival-colors",
+      "title": "Replace tricolor shadow effects in Tailwind config with Holi-themed multi-color shadow effects using vibrant festival colors",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-liveclasses-page-at-route-live-classes-that-displays-a-browsable-grid-list-of-hardcoded-live-class-sessions-each-class-card-must-show-class-title-instructor-name-scheduled-date-time-a-short-description-and-a-join-button-that-opens-the-live-session-url-e-g-youtube-zoom-link-in-a-new-tab-no-registration-or-rsvp-is-required-the-join-button-is-always-accessible",
+      "title": "Create a new LiveClasses page at route '/live-classes' that displays a browsable grid/list of hardcoded live class sessions. Each class card must show: class title, instructor name, scheduled date/time, a short description, and a 'Join' button that opens the live session URL (e.g., YouTube/Zoom link) in a new tab. No registration or RSVP is required — the Join button is always accessible.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-style-the-live-classes-page-consistently-with-the-existing-holi-festival-theme-use-the-holi-color-palette-magenta-pink-yellow-blue-green-orange-in-oklch-apply-holi-themed-animations-color-splash-powder-burst-color-float-to-decorative-elements-and-use-the-multi-color-holi-shadow-effects-defined-in-tailwind-config-js-class-cards-should-feel-vibrant-and-festive",
+      "title": "Style the Live Classes page consistently with the existing Holi festival theme: use the Holi color palette (magenta/pink, yellow, blue, green, orange in OKLCH), apply Holi-themed animations (color-splash, powder-burst, color-float) to decorative elements, and use the multi-color Holi shadow effects defined in tailwind.config.js. Class cards should feel vibrant and festive.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-live-classes-navigation-link-in-the-layout-tsx-header-navigation-menu-that-routes-to-live-classes-so-users-can-discover-and-access-the-portal-from-any-page",
+      "title": "Add a 'Live Classes' navigation link in the Layout.tsx header navigation menu that routes to '/live-classes', so users can discover and access the portal from any page.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-live-classes-route-in-app-tsx-alongside-the-existing-routes-home-register-admin-login-admin-student-login-student-profile-so-tanstack-router-can-render-the-liveclasses-page",
+      "title": "Register the '/live-classes' route in App.tsx alongside the existing routes (home, register, admin-login, admin, student-login, student-profile) so TanStack Router can render the LiveClasses page.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-error-loading-registrations-error-in-the-admindashboard-page-by-adding-proper-error-handling-and-a-graceful-fallback-when-the-registrations-query-fails-or-returns-an-error-display-a-user-friendly-empty-state-instead-of-an-error-message-ensure-the-dashboard-renders-correctly-even-when-no-data-is-available-or-the-backend-call-fails",
+      "title": "Fix the 'Error Loading Registrations' error in the AdminDashboard page by adding proper error handling and a graceful fallback. When the registrations query fails or returns an error, display a user-friendly empty state instead of an error message. Ensure the dashboard renders correctly even when no data is available or the backend call fails.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-admindashboard-tsx-add-an-explicit-initialization-check-using-the-actor-state-from-useactor-display-a-loading-indicator-while-the-actor-is-being-initialized-so-the-dashboard-never-attempts-to-render-registration-data-or-trigger-backend-calls-before-the-canister-actor-is-ready",
+      "title": "In AdminDashboard.tsx, add an explicit initialization check using the actor state from useActor. Display a loading indicator while the actor is being initialized, so the dashboard never attempts to render registration data or trigger backend calls before the canister actor is ready.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-admindashboard-tsx-add-an-explicit-initialization-check-using-the-actor-returned-from-useactor-before-rendering-any-registration-data-or-triggering-any-backend-calls-check-that-the-actor-is-non-null-while-the-actor-is-not-yet-ready-display-a-loading-spinner-or-loading-indicator-in-place-of-the-dashboard-content-only-after-the-actor-is-confirmed-non-null-should-the-dashboard-attempt-to-render-registrations-or-invoke-any-query-hooks",
+      "title": "In AdminDashboard.tsx, add an explicit initialization check using the actor returned from useActor. Before rendering any registration data or triggering any backend calls, check that the actor is non-null. While the actor is not yet ready, display a loading spinner or loading indicator in place of the dashboard content. Only after the actor is confirmed non-null should the dashboard attempt to render registrations or invoke any query hooks.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-usequeries-ts-add-an-actor-initialization-guard-to-every-query-hook-and-mutation-hook-each-hook-must-check-whether-the-actor-is-non-null-before-enabling-the-query-or-executing-the-mutation-for-react-query-hooks-set-enabled-actor-or-equivalent-so-that-queries-remain-in-a-loading-idle-state-rather-than-throwing-an-error-when-the-actor-is-not-yet-available-mutations-must-also-guard-against-calling-canister-methods-when-actor-is-null",
+      "title": "In useQueries.ts, add an actor initialization guard to every query hook and mutation hook. Each hook must check whether the actor is non-null before enabling the query or executing the mutation. For React Query hooks, set `enabled: !!actor` (or equivalent) so that queries remain in a loading/idle state rather than throwing an error when the actor is not yet available. Mutations must also guard against calling canister methods when actor is null.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-usequeries-ts-replace-all-actor-null-checks-with-the-new-isready-signal-from-the-updated-useactor-hook-set-enabled-isready-actor-on-every-react-query-usequery-call-in-every-mutation-function-body-guard-the-first-line-with-if-actor-return-or-throw-a-silent-early-exit-so-that-stale-mutation-calls-cannot-reach-the-canister-remove-any-previous-partial-guards-that-only-checked-actor-without-confirming-initialization",
+      "title": "In useQueries.ts, replace all actor null-checks with the new `isReady` signal from the updated useActor hook. Set `enabled: isReady && !!actor` on every React Query `useQuery` call. In every mutation function body, guard the first line with `if (!actor) return` (or throw a silent early exit) so that stale mutation calls cannot reach the canister. Remove any previous partial guards that only checked `!!actor` without confirming initialization.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-admindashboard-tsx-replace-all-existing-actor-initialization-checks-with-a-guard-based-on-the-new-isready-flag-from-useactor-while-isready-is-false-render-only-a-full-page-loading-spinner-with-the-message-initializing-do-not-render-any-registration-table-trigger-any-react-query-hooks-that-call-the-canister-or-display-any-error-states-until-isready-is-true-and-actor-is-non-null",
+      "title": "In AdminDashboard.tsx, replace all existing actor initialization checks with a guard based on the new `isReady` flag from useActor. While `isReady` is false, render only a full-page loading spinner with the message 'Initializing…'. Do not render any registration table, trigger any React Query hooks that call the canister, or display any error states until `isReady` is true and actor is non-null.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-registrationpage-tsx-remove-all-form-fields-except-email-the-updated-form-must-collect-only-the-student-s-email-address-remove-fields-for-name-gender-school-and-class-level-keep-the-internet-identity-authentication-requirement-the-submit-register-button-and-all-existing-post-submission-logic-redirect-approval-check-etc-exactly-as-they-are-do-not-change-any-other-page-component-or-backend-logic",
+      "title": "In RegistrationPage.tsx, remove all form fields except email. The updated form must collect only the student's email address. Remove fields for name, gender, school, and class level. Keep the Internet Identity authentication requirement, the submit/register button, and all existing post-submission logic (redirect, approval check, etc.) exactly as they are. Do not change any other page, component, or backend logic.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-delete-the-registrationpage-tsx-file-and-remove-the-register-route-from-app-tsx-so-the-registration-page-is-no-longer-accessible",
+      "title": "Delete the RegistrationPage.tsx file and remove the '/register' route from App.tsx so the registration page is no longer accessible.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-navigation-links-pointing-to-the-registration-page-register-from-layout-tsx-and-any-other-components-e-g-homepage-tsx-studentlogin-tsx-that-reference-it",
+      "title": "Remove all navigation links pointing to the registration page ('/register') from Layout.tsx and any other components (e.g., HomePage.tsx, StudentLogin.tsx) that reference it.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-delete-the-studentlogin-page-component-frontend-src-pages-studentlogin-tsx-or-clear-its-contents-and-remove-the-student-login-route-definition-from-app-tsx-so-the-student-login-page-is-no-longer-accessible",
+      "title": "Delete the StudentLogin page component (frontend/src/pages/StudentLogin.tsx) or clear its contents, and remove the '/student-login' route definition from App.tsx so the student login page is no longer accessible.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-navigation-links-pointing-to-student-login-from-layout-tsx-the-student-login-link-currently-present-in-the-header-navigation-menu-must-be-removed",
+      "title": "Remove all navigation links pointing to '/student-login' from Layout.tsx. The 'Student Login' link currently present in the header navigation menu must be removed.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-homepage-tsx-and-any-other-components-that-reference-student-login-and-remove-all-such-navigation-links-or-buttons-pointing-to-the-student-login-route",
+      "title": "Audit HomePage.tsx and any other components that reference '/student-login' and remove all such navigation links or buttons pointing to the student login route.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-student-profile-route-from-app-tsx-and-delete-or-clear-the-studentprofile-page-frontend-src-pages-studentprofile-tsx-since-it-is-only-accessible-after-student-login-which-is-being-removed-if-any-navigation-links-reference-student-profile-remove-those-as-well",
+      "title": "Remove the '/student-profile' route from App.tsx and delete or clear the StudentProfile page (frontend/src/pages/StudentProfile.tsx), since it is only accessible after student login which is being removed. If any navigation links reference '/student-profile', remove those as well.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-fully-functional-registrationpage-tsx-at-frontend-src-pages-registrationpage-tsx-the-form-must-collect-exactly-six-fields-name-text-mobile-number-tel-email-email-gender-select-male-female-other-school-name-text-and-class-text-or-select-on-submission-call-the-backend-registration-mutation-from-usequeries-ts-style-the-page-consistently-with-the-existing-holi-festival-theme-oklch-palette-holi-splash-holi-glow-shadows-color-splash-powder-burst-animations-do-not-require-internet-identity-authentication-the-form-must-be-accessible-to-all-visitors-without-login",
+      "title": "Create a fully functional RegistrationPage.tsx at frontend/src/pages/RegistrationPage.tsx. The form must collect exactly six fields: Name (text), Mobile Number (tel), Email (email), Gender (select: Male/Female/Other), School Name (text), and Class (text or select). On submission, call the backend registration mutation from useQueries.ts. Style the page consistently with the existing Holi festival theme (OKLCH palette, holi-splash/holi-glow shadows, color-splash/powder-burst animations). Do not require Internet Identity authentication — the form must be accessible to all visitors without login.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-register-the-register-route-in-app-tsx-pointing-to-registrationpage-the-route-must-be-added-alongside-the-existing-routes-home-admin-login-admin-live-classes-without-modifying-or-removing-any-of-them",
+      "title": "Register the '/register' route in App.tsx pointing to RegistrationPage. The route must be added alongside the existing routes (home, admin-login, admin, live-classes) without modifying or removing any of them.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-register-navigation-link-in-the-layout-tsx-header-navigation-menu-that-routes-to-register-insert-it-alongside-the-existing-home-live-classes-and-admin-login-links-without-removing-or-altering-any-existing-navigation-items",
+      "title": "Add a 'Register' navigation link in the Layout.tsx header navigation menu that routes to '/register'. Insert it alongside the existing Home, Live Classes, and Admin Login links without removing or altering any existing navigation items.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Remove Republic Day theme and add Holi theme",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Live class portal: browsable list of live classes with title, instructor, time, description, and Join button linking to live session URL. Hardcoded data, no registration/RSVP, Holi-themed.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Fix 'Actor not initialized' error on admin dashboard — add initialization guards so frontend waits for backend canister actor to be ready before making calls",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "In useQueries.ts, add an actor initialization guard to all query and mutation hooks so that canister calls are only attempted when the actor is fully initialized and non-null. If the actor is not yet ready, queries should return a loading/disabled state rather than throwing an 'Actor not initialized' error.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Rewrite the actor initialization logic in useActor.ts (or a wrapper around it) so that the actor is guaranteed to be fully ready before any downstream consumer can access it. The hook must expose a clear `isReady` boolean (or equivalent) that is only `true` after the actor instance is confirmed non-null and the underlying AuthClient has completed its async initialization. Do not rely solely on React Query cache status — explicitly await the AuthClient `create()` and identity resolution before setting the actor.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Remove the student registration portal entirely: delete the registration page, remove its route from App.tsx, and remove all navigation links pointing to it throughout the app.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Remove student login entirely: delete the StudentLogin page/component, remove the '/student-login' route from App.tsx, and remove all navigation links pointing to it from Layout.tsx and other components.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add fresh registration portal at /register with fields: Name, Mobile number, Email, Gender, School name, and Class. Add navigation link in header. Do not change anything else.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Ensure the backend main.mo actor accepts a registration submission that includes name, mobileNumber, email, gender, schoolName, and classLevel fields. If the existing Registration type already supports these fields, no backend change is needed. If any field is missing from the current type, add it and update the submitRegistration method accordingly.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Replace Republic Day theme with Holi theme",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,80 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T03:31:09.279Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-25",
+        "summary": "Create a fully functional RegistrationPage.tsx at frontend/src/pages/RegistrationPage.tsx. The form must collect exactly six fields: Name (text), Mobile Number (tel), Email (email), Gender (select: Male/Female/Other), School Name (text), and Class (text or select). On submission, call the backend registration mutation from useQueries.ts. Style the page consistently with the existing Holi festival theme (OKLCH palette, holi-splash/holi-glow shadows, color-splash/powder-burst animations). Do not require Internet Identity authentication — the form must be accessible to all visitors without login.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RegistrationPage.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RegistrationPage.tsx",
+          "frontend/src/hooks/useQueries.ts"
+        ]
+      },
+      {
+        "id": "REQ-26",
+        "summary": "Register the '/register' route in App.tsx pointing to RegistrationPage. The route must be added alongside the existing routes (home, admin-login, admin, live-classes) without modifying or removing any of them.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Add a 'Register' navigation link in the Layout.tsx header navigation menu that routes to '/register'. Insert it alongside the existing Home, Live Classes, and Admin Login links without removing or altering any existing navigation items.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Layout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Layout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-28",
+        "summary": "Ensure the backend main.mo actor accepts a registration submission that includes name, mobileNumber, email, gender, schoolName, and classLevel fields. If the existing Registration type already supports these fields, no backend change is needed. If any field is missing from the current type, add it and update the submitRegistration method accordingly.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
+    "build-request.json",
+    "build-template/README.md",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "frontend/src/pages/RegistrationPage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

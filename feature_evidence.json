@@ -1,0 +1,81 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-fully-functional-registrationpage-tsx-at-frontend-src-pages-registrationpage-tsx-the-form-must-collect-exactly-six-fields-name-text-mobile-number-tel-email-email-gender-select-male-female-other-school-name-text-and-class-text-or-select-on-submission-call-the-backend-registration-mutation-from-usequeries-ts-style-the-page-consistently-with-the-existing-holi-festival-theme-oklch-palette-holi-splash-holi-glow-shadows-color-splash-powder-burst-animations-do-not-require-internet-identity-authentication-the-form-must-be-accessible-to-all-visitors-without-login",
+      "featureTitle": "Create a fully functional RegistrationPage.tsx at frontend/src/pages/RegistrationPage.tsx. The form must collect exactly six fields: Name (text), Mobile Number (tel), Email (email), Gender (select: Male/Female/Other), School Name (text), and Class (text or select). On submission, call the backend registration mutation from useQueries.ts. Style the page consistently with the existing Holi festival theme (OKLCH palette, holi-splash/holi-glow shadows, color-splash/powder-burst animations). Do not require Internet Identity authentication — the form must be accessible to all visitors without login.",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/RegistrationPage.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "qr-code@1.0.0",
+        "camera@1.0.0",
+        "stripe@3.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-25"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-register-the-register-route-in-app-tsx-pointing-to-registrationpage-the-route-must-be-added-alongside-the-existing-routes-home-admin-login-admin-live-classes-without-modifying-or-removing-any-of-them",
+      "featureTitle": "Register the '/register' route in App.tsx pointing to RegistrationPage. The route must be added alongside the existing routes (home, admin-login, admin, live-classes) without modifying or removing any of them.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "qr-code@1.0.0",
+        "camera@1.0.0",
+        "stripe@3.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-26"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-register-navigation-link-in-the-layout-tsx-header-navigation-menu-that-routes-to-register-insert-it-alongside-the-existing-home-live-classes-and-admin-login-links-without-removing-or-altering-any-existing-navigation-items",
+      "featureTitle": "Add a 'Register' navigation link in the Layout.tsx header navigation menu that routes to '/register'. Insert it alongside the existing Home, Live Classes, and Admin Login links without removing or altering any existing navigation items.",
+      "files": [
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "qr-code@1.0.0",
+        "camera@1.0.0",
+        "stripe@3.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-27"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

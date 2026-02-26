@@ -1,0 +1,61 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add fresh registration portal at /register with Name, Mobile, Email, Gender, School, Class fields",
+  "requirements": [
+    {
+      "id": "REQ-25",
+      "summary": "Create a fully functional RegistrationPage.tsx with six fields (Name, Mobile Number, Email, Gender, School Name, Class) that calls the backend registration mutation and uses the Holi festival theme without requiring Internet Identity authentication",
+      "acceptanceCriteria": [
+        "RegistrationPage renders at /register with exactly six fields: Name, Mobile Number, Email, Gender, School Name, Class",
+        "All six fields are present and labeled correctly",
+        "Form submission invokes the backend registration call via the existing mutation hook in useQueries.ts",
+        "Page styling matches the Holi festival theme (OKLCH colors, holi shadows, Holi animations)",
+        "No Internet Identity login is required to access or submit the form"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RegistrationPage.tsx",
+          "operation": "create",
+          "description": "Create a registration form component with six fields: Name (text input), Mobile Number (tel input), Email (email input), Gender (select with Male/Female/Other options), School Name (text input), and Class (text input). On form submission, call the submitRegistration mutation from useQueries.ts passing fullName, mobileNumber, email, gender, schoolName, and classLevel. Style the page with Holi theme using OKLCH colors (magenta, pink, yellow, blue, green, orange), holi-splash and holi-glow box shadows, and color-splash/powder-burst animations from the Tailwind config. Include decorative Holi elements similar to HomePage. Display success/error messages after submission. Do not require Internet Identity authentication — the form must be publicly accessible."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Review the existing submitRegistration mutation hook to ensure it correctly calls actor.submitRegistration(fullName, mobileNumber, email, gender, schoolName, classLevel) and invalidates the registration-related query caches on success. If the hook does not exist, add a useSubmitRegistration mutation hook that accepts the six registration fields and calls the backend submitRegistration method."
+        }
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "summary": "Register the '/register' route in App.tsx pointing to RegistrationPage alongside existing routes without modifying or removing them",
+      "acceptanceCriteria": [
+        "Navigating to /register renders the RegistrationPage component",
+        "All existing routes (home, admin-login, admin, live-classes) continue to work unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a new route for '/register' that renders the RegistrationPage component. Insert the route definition alongside the existing routes (home at '/', admin-login at '/admin-login', admin at '/admin', live-classes at '/live-classes') without modifying or removing any of them. Use the same TanStack Router pattern as existing routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "summary": "Add a 'Register' navigation link in the Layout.tsx header navigation menu that routes to '/register' alongside existing navigation items",
+      "acceptanceCriteria": [
+        "A 'Register' link appears in the header navigation on all pages",
+        "Clicking 'Register' navigates to /register",
+        "Existing navigation links (Home, Live Classes, Admin Login) remain unchanged"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add a 'Register' navigation link in the header navigation menu that routes to '/register'. Insert it alongside the existing Home, Live Classes, and Admin Login links without removing or altering any existing navigation items. Use the same Link component and styling pattern as existing navigation links. Maintain the Holi theme styling for consistency."
+        }
+      ]
+    }
+  ]
+}

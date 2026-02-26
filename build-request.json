@@ -1,0 +1,99 @@
+{
+  "kind": "build_request",
+  "title": "Add fresh registration portal at /register with Name, Mobile, Email, Gender, School, Class fields",
+  "projectName": "Excellent Education Classes",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-25",
+      "text": "Create a fully functional RegistrationPage.tsx at frontend/src/pages/RegistrationPage.tsx. The form must collect exactly six fields: Name (text), Mobile Number (tel), Email (email), Gender (select: Male/Female/Other), School Name (text), and Class (text or select). On submission, call the backend registration mutation from useQueries.ts. Style the page consistently with the existing Holi festival theme (OKLCH palette, holi-splash/holi-glow shadows, color-splash/powder-burst animations). Do not require Internet Identity authentication — the form must be accessible to all visitors without login.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-4"
+        ],
+        "quotes": [
+          "add just name, mobile number, email, gender, school name, class"
+        ]
+      },
+      "acceptanceCriteria": [
+        "RegistrationPage renders at /register with exactly six fields: Name, Mobile Number, Email, Gender, School Name, Class",
+        "All six fields are present and labeled correctly",
+        "Form submission invokes the backend registration call via the existing mutation hook in useQueries.ts",
+        "Page styling matches the Holi festival theme (OKLCH colors, holi shadows, Holi animations)",
+        "No Internet Identity login is required to access or submit the form"
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "text": "Register the '/register' route in App.tsx pointing to RegistrationPage. The route must be added alongside the existing routes (home, admin-login, admin, live-classes) without modifying or removing any of them.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-4"
+        ],
+        "quotes": [
+          "don't change anything else alright"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating to /register renders the RegistrationPage component",
+        "All existing routes (home, admin-login, admin, live-classes) continue to work unchanged"
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Add a 'Register' navigation link in the Layout.tsx header navigation menu that routes to '/register'. Insert it alongside the existing Home, Live Classes, and Admin Login links without removing or altering any existing navigation items.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-4"
+        ],
+        "quotes": [
+          "don't change anything else alright"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A 'Register' link appears in the header navigation on all pages",
+        "Clicking 'Register' navigates to /register",
+        "Existing navigation links (Home, Live Classes, Admin Login) remain unchanged"
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "text": "Ensure the backend main.mo actor accepts a registration submission that includes name, mobileNumber, email, gender, schoolName, and classLevel fields. If the existing Registration type already supports these fields, no backend change is needed. If any field is missing from the current type, add it and update the submitRegistration method accordingly.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-recent-4"
+        ],
+        "quotes": [
+          "add just name, mobile number, email, gender, school name, class"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Registration record type includes name, mobileNumber, email, gender, schoolName, and classLevel fields",
+        "submitRegistration accepts all six fields and persists them",
+        "AdminDashboard continues to display registrations correctly with the updated fields"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify or remove any existing routes (home, admin-login, admin, live-classes)",
+    "Do not change Layout.tsx navigation links other than adding the new Register link",
+    "Do not alter HomePage.tsx, LiveClasses.tsx, AdminDashboard.tsx, AdminLogin.tsx, or any other page/component not directly related to the registration portal",
+    "Do not touch immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Preserve the existing Holi theme throughout — do not alter colors, animations, or Tailwind config"
+  ],
+  "nonGoals": [
+    "Internet Identity / login-gating for the registration form",
+    "Email verification or OTP for mobile number",
+    "Admin approval flow changes",
+    "Any changes to the Live Classes portal",
+    "Any changes to the Admin Dashboard or Admin Login"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
